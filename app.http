@@ -1,0 +1,29 @@
+###       Consultar todo o por genero
+GET http://localhost:1234/movies?genre=acton
+
+###       Consultar por id
+GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+
+
+###
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "GOLD",
+  "year": 2024,
+  "director": "Cristiano ronaldo",
+  "duration": 77,
+  "poster": "https://pbs.twimg.com/media/GPJgaDDXcAAwRVk?format=jpg&name=large",
+  "genre": ["Drama","Action"],
+  "rate": 10
+}
+###  /// modfiicar pelicula
+
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "title": "El bueno",
+  "year": 2024
+}
