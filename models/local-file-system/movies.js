@@ -1,5 +1,5 @@
 
-import { readJSON } from "../utils.js"
+import { readJSON } from "../../utils.js"
 import { randomUUID } from "node:crypto"
 
 const movies = readJSON('./movies.json');
@@ -12,11 +12,14 @@ static async getAll ({genre}){
         const filteredMovies = movies.filter(
           movie => movie.genre.some(g => g.toLowerCase() === genre.toLowerCase())
         )
-        if (filteredMovies === "[]")     {  
-          return filteredMovies}
-
-      }
-      return movies;
+        if (Object.keys(filteredMovies).length){  
+          console.log(genre)
+          console.log(Object.keys(filteredMovies).length)
+          console.log(typeof(filteredMovies))
+          return filteredMovies }
+        }
+            console.log(typeof(movies))
+             return movies;
 }
 //Obtener peliculas solo por ID
 static async getById({id}){

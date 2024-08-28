@@ -1,9 +1,5 @@
 
 import  router  from "express";
-import { randomUUID } from 'node:crypto';
-
-import { readJSON } from "../utils.js";
-import { MovieModel } from "../models/movies.js";
 import { MovieController } from "../controllers/movies.js";
 
 // const movies = readJSON('../movies.json');
