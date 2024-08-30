@@ -1,5 +1,6 @@
 import sql from "mssql";
-
+import { randomUUID } from "node:crypto"
+//create connection conig to MSSQL
 const config = {
     server: 'localhost',
     database: 'dbmov',
@@ -25,9 +26,22 @@ static async getAll ({genre}){
 }
 //Obtener peliculas solo por ID
 static async getById({id}){
+  try {
+    const result = await conn.query(`select * from movies where id = '${id}'`)
+    return result.recordsets;
+
+} catch (error) {
+  console.error(error)
+}
 }
 //Crear pelicula
 static async create({input}){
+  const newID = randomUUID();
+  console.log(newID)
+  const result = await conn.query(`INSERT INTO movies (id, title, year,director,duration,poster,rate)
+VALUES ('${newID}', '${input.title}' , '${input.year}', '${input.director}','${input.duration}','${input.poster}','${input.rate}')`)
+console.log(result)
+return result;
 }
 //Eliminar pelicula
 static async delete({id}){

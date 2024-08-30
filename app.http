@@ -2,7 +2,8 @@
 GET http://localhost:1234/movies
 
 ###       Consultar por id
-GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+GET http://localhost:1234/movies/F06B3D54-D462-42EF-8DDA-C0C7D4E6BB78
+# GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
 
 
 ###
@@ -10,13 +11,13 @@ POST http://localhost:1234/movies
 Content-Type: application/json
 
 {
-  "title": "GOLD",
+  "title": "the new movie",
   "year": 2024,
-  "director": "Cristiano ronaldo",
+  "director": "new director",
   "duration": 77,
-  "poster": "https://pbs.twimg.com/media/GPJgaDDXcAAwRVk?format=jpg&name=large",
+  "poster": "https://wallpapers.com/images/hd/linkin-park-4k-b2u2ed8psvzljc02.jpg",
   "genre": ["Drama","Action"],
-  "rate": 10
+  "rate": 9
 }
 ###  /// modfiicar pelicula
 
