@@ -1,4 +1,5 @@
-import { MovieModel } from "../models/local-file-system/movies.js";
+// import { MovieModel } from "../models/local-file-system/movies.js";
+import { MovieModel } from "../models/sql/movies.js";
 import { validateMovie, validatePartialMovie } from '../schemas/movie.js';
 
 export class MovieController{
@@ -18,7 +19,6 @@ static async getAll(req,res) {
     const result = validateMovie(req.body)
   
     if (!result.success) {
-      // 422 Unprocessable Entity
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
   
